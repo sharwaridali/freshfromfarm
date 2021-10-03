@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Customer Sign Up</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">
+    <link rel="stylesheet" href="{{url_for('static', filename='fonts/ionicons.min.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Login-Form-Dark.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Registration-Form-with-Photo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/untitled.css')}}">
+    </head>
+    <body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('static/images/bg.jpg');">
+        <h1 class="text-center text-white d-none d-lg-block site-heading"><span class="site-heading-lower"><span class="site-heading-lower"><strong>Fresh From Farm</strong></span></span>
+        </h1>
+        <nav class="navbar navbar-light navbar-expand-lg py-lg-4" id="mainNav" style="background-color: rgb(2,153,35);color: rgb(255,255,255);font-family: Raleway, sans-serif;">
+            <div class="container"><a class="navbar-brand text-uppercase d-lg-none text-expanded" href="#" style="color: rgb(255,255,255);font-family: Abel, sans-serif;">F3</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive" style="background-color: rgba(72,225,0,0);">
+                    <ul class="nav navbar-nav mx-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('index')}}">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('products')}}">Products</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('login_option')}}">Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('registration_option')}}" style="color: #ffffff;">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="register-photo" style="background-color: rgb(255,255,255);">
+            <div class="form-container">
+                <form method="post" style="width: 1080px;height: 464px;">
+                    <h2 class="text-center"><strong>Register</strong></h2>
+                    <p>{{msg}}</p>
+                    <div class="form-group"><input class="form-control" type="text" name="fname" placeholder="Frist Name" autocomplete="on" inputmode="text" required></div>
+                    <div class="form-group"><input class="form-control" type="text" name="lname" placeholder="Last Name" autocomplete="on" inputmode="text" required></div>
+                    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" autocomplete="on" inputmode="email" required></div>
+                    <div class="form-group"><input class="form-control" type="password" name="psw" placeholder="Password" required></div>
+                    <div class="form-group"><input class="form-control" type="password" name="re_psw" placeholder="Password (repeat)" required></div>
+                    <div class="form-group"><input class="form-control" type="text" name="address" placeholder="Address" autocomplete="on" inputmode="text" required></div>
+                    <div class="form-group"><input class="form-control" type="text" name="apartment" placeholder="Apartment" autocomplete="on" inputmode="text"></div>
+                    <div class="form-group"><input class="form-control" type="text" name="pincode" placeholder="Pin Code" autocomplete="on" inputmode="text" required></div>
+                    <div class="form-group"><input class="form-control" type="numeric" name="phone" placeholder="Phone No." autocomplete="on" inputmode="numeric" required></div>
+                    <div class="form-group">
+                        <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox" name ="checkbox" required>I agree to the license terms.</label></div>
+                    </div>
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(2,153,35);">Sign Up</button></div><a href="{{url_for('customer_login')}}" class="already">You already have an account? Login here.</a></form>
+            </div>
+        </div>
+        <section class="page-section about-heading"></section>
+        <footer class="footer text-faded text-center py-5" style="color: rgba(255,255,255,0.49);">
+            <div class="container">
+                <p class="m-0 small" style="color: rgba(255,255,255,0.75);">Copyright&nbsp;© FreshFromFarm 2021</p>
+            </div>
+        </footer>
+        <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+        <script src="{{url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static', filename='js/bs-animation.js')}}"></script>
+        <script src="{{url_for('static', filename='js/current-day.js')}}"></script>
+        <!--
+        <a href="{{url_for('index')}}">Home</a><br>
+        <a href="{{url_for('products')}}">Products</a><br>
+        <a href="{{url_for('login_option')}}">Login</a><br>
+        <a href="{{url_for('registration_option')}}">Register</a><br>
+        <form method="POST" onsubmit="return validation()">
+            Email: <input type="email" name="email" required><br>
+            Password: <input type="password" name="psw" required><br>
+            Retype Password: <input type="password" name="re_psw" required><br>
+            First Name: <input type="text" name="fname" required><br>
+            Last Name: <input type="text" name="lname" required><br>
+            Address: <input type="text" name="address" required><br>
+            Apartment : <input type="text" name="apartment"><br>
+            Pincode: <input type="number" name="pincode" required><br>
+            Phone: <input type="number" name="phone" required><br>
+            <button type="submit">Register</button>
+        </form>
+        -->
+    </body>
+
+</html>
+

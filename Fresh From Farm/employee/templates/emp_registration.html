@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">
+  <link rel="stylesheet" href="{{url_for('static',filename='fonts/ionicons.min.css')}}">
+  <link rel="shortcut icon" href="{{url_for('static',filename='fonts/favicon.ico')}}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/Login-Form-Dark.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/Registration-Form-with-Photo.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/stylex.css')}}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+  
+<body  style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('static/images/bg.jpg');">
+  <nav class="navbar navbar-light navbar-expand-lg py-lg-4" id="mainNav" style="background-color: rgb(2,153,35);color: rgb(255,255,255);font-family: Raleway, sans-serif;">
+              <div class="container"><a class="navbar-brand text-uppercase d-lg-none text-expanded" href="#" style="color: rgb(255,255,255);font-family: Abel, sans-serif;">F3</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                      aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                  <div class="collapse navbar-collapse" id="navbarResponsive" style="background-color: rgba(72,225,0,0);">
+                      <ul class="nav navbar-nav mx-auto">
+                          <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('emp_registration')}}" style="color: #ffffff;">Employee Registration</a></li>
+                          <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('admin_dashboard')}}">Admin Dashboard</a></li>
+                          <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('logout')}}">Logout</a></li>
+                      </ul>
+                  </div>
+              </div>
+    </nav>
+    {{msg}}<br><br>
+    <form method="POST" onsubmit="return validation()">
+        Email: <input type="email" name="email" required><br>
+        Password: <input type="password" name="psw" required><br>
+        Retype Password: <input type="password" name="re_psw" required><br>
+        First Name: <input type="text" name="fname" required><br>
+        Last Name: <input type="text" name="lname" required><br>
+        Address: <input type="text" name="address" required><br>
+        Phone: <input type="number" name="phone" required><br>
+        Department:<select name="department" >
+            <option value="sell">Sell</option>
+            <option value="import">Import</option>
+            <option value="shipping">Shipping</option></select><br>
+        Designation:<select name="designation" >
+            <option value="manager">manager</option>
+            <option value="delivery_emp">delivery_emp</option></select>
+        doj:<input type="date" name="date" required>
+        manager:<input type="text" name="manage">
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

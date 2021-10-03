@@ -1,0 +1,85 @@
+<!--<a href="{{url_for('fprofile')}}">Profile</a>
+    <a href="{{url_for('sell_history')}}">History</a>
+    <a href="{{ url_for('flogout') }}" class="btn">Logout</a>
+    Welcome {{session.name}}!!
+    <table id="tbl">
+        {% for product in arr %} 
+            <tr>
+                <td>{{product}}</td>
+            <tr>
+        {% endfor %}
+    </table>
+    <form method="POST" action="/sell">
+        <button type="submit">Sell</button>
+    </form>-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cart</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">
+    <link rel="stylesheet" href="{{url_for('static',filename='fonts/ionicons.min.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/Login-Form-Dark.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/Registration-Form-with-Photo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/stylex.css')}}">
+
+    </head>
+    <body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('static/images/bg.jpg');">
+        <h1 class="text-center text-white d-none d-lg-block site-heading"><span class="site-heading-lower"><span class="site-heading-lower"><strong>Fresh From Farm</strong></span></span>
+        </h1>
+        <nav class="navbar navbar-light navbar-expand-lg py-lg-4" id="mainNav" style="background-color: rgb(2,153,35);color: rgb(255,255,255);font-family: Raleway, sans-serif;">
+            <div class="container"><a class="navbar-brand text-uppercase d-lg-none text-expanded" href="#" style="color: rgb(255,255,255);font-family: Abel, sans-serif;">F3</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive" style="background-color: rgba(72,225,0,0);">
+                    <ul class="nav navbar-nav mx-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('fprofile')}}">Profile</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('sell_history')}}">History</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('farmer_dashboard')}}" >Dashboard</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('flogout') }}" class="btn" >Logout</a></li>
+                      </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="register-photo" style="background-color: rgb(255,255,255);">
+            <div class="form-container">
+                <table id="tbl">
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th></th>
+                        <th>Quantity</th>
+                    </tr>
+                    {% for product in arr %} 
+                        <tr>
+                            {% for j in product %}
+                                {% for k in j %}
+                                <td>{{k}}</td>
+                            {% endfor %}
+                            {% endfor %}
+                        <tr>
+                    {% endfor %}
+                </table>
+                Total Amount:{{amount}}
+            </div>
+            </div>
+            <div class="register-photo" style="background-color: rgb(255,255,255);">
+                <div class="form-container">
+                <form method="POST" action="/sell" style="width: 1080px;height: 464px;">
+                    Address:<input type="text" name="address">
+                    <button type="submit" class="btn btn-primary btn-block" style="background-color: rgb(2,153,35);">Sell</button>
+                </form>
+                </div>
+                </div>
+    </body>
+</html>
+<!--<a href="{{url_for('profile')}}">Profile</a>
+    <a href="{{url_for('order_history')}}">History</a>
+    <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    Welcome {{session.name}}!!-->

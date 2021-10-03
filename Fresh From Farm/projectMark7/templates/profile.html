@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <title>Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">
+    <link rel="stylesheet" href="{{url_for('static',filename='fonts/ionicons.min.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/Login-Form-Dark.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/Registration-Form-with-Photo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/stylex.css')}}">
+
+    <style>
+        th, td{
+            padding: 17px;
+        }
+        </style>
+</head>
+<body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('static/images/bg.jpg');">
+    <h1 class="text-center text-white d-none d-lg-block site-heading"><span class="site-heading-lower"><span class="site-heading-lower"><strong>Fresh From Farm</strong></span></span>
+    </h1>
+    <nav class="navbar navbar-light navbar-expand-lg py-lg-4" id="mainNav" style="background-color: rgb(2,153,35);color: rgb(255,255,255);font-family: Raleway, sans-serif;">
+        <div class="container"><a class="navbar-brand text-uppercase d-lg-none text-expanded" href="#" style="color: rgb(255,255,255);font-family: Abel, sans-serif;">F3</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive" style="background-color: rgba(72,225,0,0);">
+                <ul class="nav navbar-nav mx-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('profile')}}" style="color: #ffffff;">Profile</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('order_history')}}">History</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url_for('dashboard')}}" >Dashboard</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{ url_for('logout') }}" class="btn" >Logout</a></li>
+                  </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="register-photo" style="background-color: rgb(255,255,255);">
+    <div class="form-container">
+    <table id="tbl" style="margin-left: auto;margin-right: auto; text-align: center;">
+        <tr>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Apartment</th>
+            <th>Pincode</th>
+            <th>Phone</th>
+        <tr>
+        <tr>
+            <td>{{customerDetails[1]}}</td>
+            <td>{{customerDetails[3]}}</td>
+            <td>{{customerDetails[4]}}</td>
+            <td>{{customerDetails[5]}}</td>
+            <td>{{customerDetails[6]}}</td>
+            <td>{{customerDetails[7]}}</td>
+            <td>{{customerDetails[8]}}</td>
+        <tr>
+    </table>
+    </div>
+    </div>
+</body>
+</html>
